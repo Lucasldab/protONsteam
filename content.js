@@ -18,15 +18,31 @@ function getAppIdFromUrl(url) {
 
 function createBadge(tier) {
   var cfg = TIER_CONFIG[tier] || TIER_CONFIG.notrated;
+
   var badge = document.createElement("div");
   badge.id = "protonsteam-badge";
   badge.className = "protonsteam-badge protonsteam-tier-" + tier;
-  badge.innerHTML =
-    '<span class="protonsteam-emoji">' + cfg.emoji + '</span>' +
-    '<span class="protonsteam-text">' +
-      '<span class="protonsteam-label">ProtonDB</span>' +
-      '<span class="protonsteam-tier">' + cfg.label + '</span>' +
-    '</span>';
+
+  var emojiSpan = document.createElement("span");
+  emojiSpan.className = "protonsteam-emoji";
+  emojiSpan.textContent = cfg.emoji;
+
+  var textSpan = document.createElement("span");
+  textSpan.className = "protonsteam-text";
+
+  var labelSpan = document.createElement("span");
+  labelSpan.className = "protonsteam-label";
+  labelSpan.textContent = "ProtonDB";
+
+  var tierSpan = document.createElement("span");
+  tierSpan.className = "protonsteam-tier";
+  tierSpan.textContent = cfg.label;
+
+  textSpan.appendChild(labelSpan);
+  textSpan.appendChild(tierSpan);
+  badge.appendChild(emojiSpan);
+  badge.appendChild(textSpan);
+
   return badge;
 }
 
@@ -55,7 +71,6 @@ function injectBadge(badge) {
   for (var i = 0; i < targets.length; i++) {
     var el = document.querySelector(targets[i]);
     if (el) {
-      // Wrap title in a flex container so badge sits inline to the right
       var wrapper = document.createElement("div");
       wrapper.id = "protonsteam-wrapper";
       wrapper.style.cssText = "display:inline-flex;align-items:center;gap:12px;flex-wrap:wrap;width:100%;";
