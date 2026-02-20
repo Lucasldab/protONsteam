@@ -1,0 +1,64 @@
+/* styles.css — protONsteam badge styles */
+
+.protonsteam-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  background-color: #1b2838; /* Steam dark */
+  border: 2px solid #4c6b22;
+  font-family: "Motiva Sans", Arial, sans-serif;
+  font-size: 14px;
+  color: #ffffff;
+  margin: 8px 0;
+  transition: border-color 0.3s, background-color 0.3s;
+  user-select: none;
+  text-decoration: none;
+  cursor: default;
+}
+
+.protonsteam-badge:hover {
+  opacity: 0.9;
+}
+
+.protonsteam-emoji {
+  font-size: 20px;
+  line-height: 1;
+}
+
+.protonsteam-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.protonsteam-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  opacity: 0.7;
+}
+
+.protonsteam-tier {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+/* Per-tier accent colors */
+.protonsteam-tier-native   { border-color: #7bc8f6; }
+.protonsteam-tier-platinum { border-color: #b4c7dc; }
+.protonsteam-tier-gold     { border-color: #cfb53b; }
+.protonsteam-tier-silver   { border-color: #a8a9ad; }
+.protonsteam-tier-bronze   { border-color: #cd7f32; }
+.protonsteam-tier-borked   { border-color: #c0392b; }
+.protonsteam-tier-notrated { border-color: #555555; }
+.protonsteam-tier-loading  { border-color: #333333; }
+
+.protonsteam-tier-native   .protonsteam-tier { color: #7bc8f6; }
+.protonsteam-tier-platinum .protonsteam-tier { color: #b4c7dc; }
+.protonsteam-tier-gold     .protonsteam-tier { color: #cfb53b; }
+.protonsteam-tier-silver   .protonsteam-tier { color: #a8a9ad; }
+.protonsteam-tier-bronze   .protonsteam-tier { color: #cd7f32; }
+.protonsteam-tier-borked   .protonsteam-tier { color: #c0392b; }
+.protonsteam-tier-notrated .protonsteam-tier { color: #888888; }

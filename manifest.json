@@ -1,0 +1,34 @@
+{
+  "manifest_version": 3,
+  "name": "protONsteam",
+  "version": "1.0.0",
+  "description": "Shows ProtonDB compatibility ratings (Native, Platinum, Gold, Silver, Bronze, Borked) on Steam game pages.",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "permissions": [],
+  "host_permissions": [
+    "https://store.steampowered.com/*",
+    "https://www.protondb.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://store.steampowered.com/app/*"],
+      "js": ["content.js"],
+      "css": ["styles.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "protONsteam@extension",
+      "strict_min_version": "109.0"
+    }
+  }
+}

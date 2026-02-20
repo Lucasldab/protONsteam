@@ -1,0 +1,33 @@
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Node (if build tooling is added later)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+
+# Build output (if a bundler is added later)
+dist/
+build/
+web-ext-artifacts/
+
+# Environment
+.env
+.env.local
+
+# Packed extension files
+*.zip
+*.crx
+*.xpi
