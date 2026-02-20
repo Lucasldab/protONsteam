@@ -51,16 +51,17 @@ function injectBadge(badge) {
     ".apphub_AppName",
     "#appHubAppName",
     ".page_title_area",
-    "body",
   ];
   for (var i = 0; i < targets.length; i++) {
     var el = document.querySelector(targets[i]);
     if (el) {
-      if (el.parentElement) {
-        el.parentElement.insertBefore(badge, el.nextSibling);
-      } else {
-        el.appendChild(badge);
-      }
+      // Wrap title in a flex container so badge sits inline to the right
+      var wrapper = document.createElement("div");
+      wrapper.id = "protonsteam-wrapper";
+      wrapper.style.cssText = "display:inline-flex;align-items:center;gap:12px;flex-wrap:wrap;width:100%;";
+      el.parentElement.insertBefore(wrapper, el);
+      wrapper.appendChild(el);
+      wrapper.appendChild(badge);
       return;
     }
   }
