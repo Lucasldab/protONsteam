@@ -30,5 +30,17 @@
       "id": "protONsteam@extension",
       "strict_min_version": "109.0"
     }
+  },
+  "data_collection_permissions": {
+    "collect_technical_and_interaction_data": false,
+    "collect_financial_and_payment_data": false,
+    "collect_location_data": false,
+    "collect_health_data": false,
+    "collect_personal_communications": false,
+    "collect_personal_information": false,
+    "collect_browsing_data": false,
+    "share_data_with_third_parties": false,
+    "use_data_for_marketing": false,
+    "use_data_for_profiling": false
   }
 }
